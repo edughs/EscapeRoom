@@ -1,0 +1,134 @@
+
+/*-------GENERALES-------*/
+*{
+  /*border: 1px solid white;*/
+  background-color: black;
+  color:red;
+  text-align: center;
+}
+div{
+  display: block;
+}
+.izq{
+  float:left;
+}
+.dcha{
+  float:right;
+}
+.hcent{
+  margin: 0 auto;
+}
+.vcent{
+  margin: auto 0;
+}
+
+/*---------BARRA MENÚ------------*/
+
+#logo, #nombre_grupo, #pistas{
+  height: 150px;
+}
+
+#logo img{
+  width: 100%;
+  height: 100%;
+}
+
+.pista img{
+  width: 100px;
+  height: 100px;
+}
+/*#pistas{
+  border: 1px solid white;
+}*/
+#pistas h4{
+  font-size: 2em;
+}
+#nombre_grupo{
+  line-height: 75px;
+  position: relative;
+} 
+#nombre_grupo h4{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*vertical-align: middle;*/
+  margin: auto 0px;
+  font-size: 4em;
+  /*text-shadow: 0.1em 0.1em #333*/
+}
+
+#clock_big{
+  /*border: 5px solid grey;*/
+  background-color: grey;
+  border-radius: 5px;
+  height: 600px;
+  font-size: 24em;
+}
+/*#clock_big div{
+  margin-top: 10px;
+  font-size: 21em;
+}*/
+
+.item{
+  width: 100%;
+  /*min-height: 150px;*/
+  height: 450px;
+}
+.container-fluid > .row{
+  width: 100%;
+}
+/*.pista{
+  height: 300px;
+}*/
+.msj_pista{
+  height: 250px;
+  font-size: 3em;
+}
+
+#carousel_pistas h2{
+  font-size: 4em;
+}
+
+#copyright{
+  font-size: 1em;
+}
+
+
+
+/*-------MEDIA QUERIES-------*/
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { 
+    
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { 
+
+}
+
+/*We occasionally expand on these media queries to include a max-width to limit CSS to a narrower set of devices.*/
+
+@media (max-width: @screen-xs-max) { 
+
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { 
+
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { 
+  
+}
+@media (min-width: @screen-lg-min) { 
+
+}
+

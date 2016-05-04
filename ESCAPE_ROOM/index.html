@@ -1,0 +1,146 @@
+<!--Author: edughs-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escape room</title>
+  <link rel="stylesheet" href="style/style.css" type="text/css" /> 
+  <link rel="stylesheet" href="style/panel.css" type="text/css" />
+  
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container-fluid" id="timer">
+    <nav class="row">
+      <div id="logo" class="izq col-xs-12 col-sm-3 col-sm-offset-1">
+        <img src="img/escapelogo.jpeg" alt="logo">
+      </div>
+      <div id="nombre_grupo" class="col-xs-12 col-sm-4">
+        <h4>NOMBRE GRUPO</h4>
+      </div>
+      <div id="pistas" class="dcha col-xs-12 col-sm-4">
+        <h4>PISTAS</h4>
+        <div class="pista col-xs-4" id="pista1">
+          <img src="img/lens.png" alt="">
+        </div>
+        <div class="pista col-xs-4" id="pista2">
+          <img src="img/lens.png" alt="">
+        </div>
+        <div class="pista col-xs-4" id="pista3">
+          <img src="img/lens.png" alt="">
+        </div>
+      </div>
+    </nav></br>
+    <span class="clock col-xs-12 col-lg-8 col-lg-offset-2" id="clock_big" ></span>
+    <div class="row" id="carousel_pistas" class="show">
+        <div id="the-slider" class="carousel slide col-xs-12 " data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#the-slider" data-slide-to="0" class="active"></li>
+              <li data-target="#the-slider" data-slide-to="1"></li>
+              <li data-target="#the-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">           
+                <div class="carousel-caption">
+                    <h2>PISTA 1</h2>
+                    <div id="msj_pista1" class="msj_pista"></div>
+                </div>
+              </div>
+                <div class="item">
+                  <div class="carousel-caption">
+                      <h2>PISTA 2</h2>
+                      <div id="msj_pista2" class="msj_pista"></div>
+                  </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                      <h2>PISTA 3</h2>
+                      <div id="msj_pista3" class="msj_pista"></div>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#the-slider" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#the-slider" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+      </div>
+    <div id="copyright">Copyright EDUGHS 2016</div>
+  </div>
+
+  <!-- PANEL DE CONTROL-->
+
+  <div class="container-fluid" id="panel">
+      <nav class="row" id="panelnav">
+          <h4 class="col-md-12">PANEL DE CONTROL</h4>
+      </nav>
+      <div id="central" class="row">
+
+          <div id="conf_cont" class="conf_elem nopadding col-xs-12 col-sm-12 col-md-4">
+              <h1>CONTADOR</h1><hr> 
+              <div class="row" id="conf_reloj">
+                  <input id="horas" type="number" class="col-xs-3" value="01" max="24" min="0"/>
+                  <div class="col-xs-1">:</div>
+                  <input id="minutos" type="number" class="col-xs-3" value="00" max="59" min="00"/>
+                  <div class="col-xs-1">:</div>
+                  <input id="segundos" type="number" class="col-xs-3" value="00" max="59" min="00"/>
+              </div>
+              <span class="clock" id="clock_sm"></span><br>
+              <input type="button" name="start" id="startButton"  class="clockbutton" value="START" onClick="StartClock();">
+              <input type="button" name="stop" id="stopButton"  class="clockbutton" value="STOP" onClick="StopClock();">
+              <input type="button" name="resume" id="resumeButton"  class="clockbutton" value="RESUME" onClick="ResumeClock();">
+          </div>
+
+          <div id="conf_imag" class="conf_elem nopadding col-xs-12 col-sm-6 col-md-4">
+              <h1>IMAGEN</h1><hr>
+              <div id="imagePreview"></div>
+              <input id="uploadFile" type="file" name="image" class="img" />
+              
+              <p>TIEMPO(s)</p>
+              <input id="imgsegundos" type="number" value="10"/>            
+              
+              <input type="submit" id="enviar_imagen" class="btn_enviar" value="Enviar imagen"><br>
+          </div>
+
+          <div id="conf_pista" class="conf_elem nopadding col-xs-12 col-sm-6 col-md-4">
+              <h1>PISTAS</h1><hr>
+              <div class="pista col-xs-4" id="pista1">
+                  <img src="img/lens.png" alt="">
+              </div>
+              <div class="pista col-xs-4" id="pista2">
+                  <img src="img/lens.png" alt="">
+              </div>
+              <div class="pista col-xs-4" id="pista3">
+                  <img src="img/lens.png" alt="">
+              </div>
+              <form id="form_pistas" action="#">
+                <input id="msj_enviar" type="text" name="pista" value="Pista">
+                <input type="submit" class="btn_enviar" value="Submit"><br>
+              </form>
+          </div>
+      </div>
+
+  </div>
+  <img alt="" class="img-responsive" id="imgpantalla" src="">
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="lib/jquery.countdown.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/panel.js"></script>
+  <script src="js/countdown.js"></script>
+  <!--<script src="clock.js"></script>-->
+</body>
+</html>

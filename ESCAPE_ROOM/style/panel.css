@@ -1,0 +1,119 @@
+/*-------PANEL.CSS------------------------------*/
+/*-------GENERALES-------*/
+#timer div{
+	color:red;
+}
+#panel div{
+	color: black;
+}
+#panel h1{
+	color:red;
+}
+#central{
+	background-color: #3B3B3B;
+}
+input{
+	background-color: white;
+}
+nav{
+	height: 150px;
+}
+nav h4{
+	text-align: center;
+	font-size: 5em;
+	/*text-shadow: 0.1em 0.1em #333*/
+}
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+.conf_elem{
+	border: 1px solid black;
+	height: 460px;
+	border-radius: 5px;
+	text-align: center;
+	background-color: grey;
+}
+.conf_elem h1{
+	width: 100%;
+	border-bottom: 1px solid black;
+	background-color: #EDCA08;
+}
+.btn_enviar{
+	width: 100px;
+	height: 35px;
+	background-color: #0DCB08;
+	border-radius: 5px;
+	color: white;
+}
+
+/*---------SECCIÓN RELOJ----------*/
+#conf_reloj{
+	margin-left: 5px;
+}
+#conf_reloj input, #conf_reloj div{
+	margin-left: 5px;
+	height: 200px;
+	font-size: 8em;
+}
+
+#clock_sm{
+  /*border: 5px solid black;*/
+  border-radius: 5px;
+  min-width: 300px;
+  width: 30%;
+  height: 500px;
+  font-size: 3em;
+  background-color: black;
+}
+
+/*----Botones-----*/
+
+.clockbutton{
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+#startButton{
+  background-color: green;
+}
+#stopButton{
+  background-color: red;
+}
+#resumeButton{
+  background-color: blue;
+}
+
+/*---------SECCIÓN IMAGEN----------*/
+
+#imagePreview {
+	border: 1px solid black;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    background-position: center center;
+    background-size: cover;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+    display: inline-block;
+}
+
+#uploadFile{
+	margin: 0 auto;
+}
+/*input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    margin: 0;
+    width: 500px;
+}*/
+
+/*---------SECCIÓN PISTAS----------*/
+
+#msj_enviar{
+	width: 300px;
+}
+
+.pista img{
+	width: 100px;
+	height: 100px;
+}
+
